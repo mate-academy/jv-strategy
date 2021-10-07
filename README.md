@@ -5,23 +5,29 @@ Imagine you have сhain of stores. You need to implement discount system for peo
 in some special events of a year like New Year.
 
 In this task we'll need help of Strategy pattern.
-First of all, you need to create `DiscountStrategy` interface 
-with method `calculatePriceWithDiscount()` with one parameter `originalPrice` and 
-return type `double`. It must be located in `core.basesyntax.strategy` package.
+First of all, you need to create `DiscountService` interface 
+with method `getDiscount()` with return type `double`. 
+It must be located in `core.basesyntax.strategy` package.
 
 You must create its implementations (with the same names) with such discounts:
 
 | Implementation name |Discount |
 | :---: | :---: |
-| NewYearDiscountStrategy| 20 |
-| BirthdayDiscountStrategy| 33 |
-| BlackFridayDiscountStrategy| 45 |
+| NewYearDiscountService| 20 |
+| BirthdayDiscountService| 33 |
+| BlackFridayDiscountService| 45 |
 
 Each of this implementation in result of execution of method 
-`calculatePriceWithDiscount()` must return price taking into account its discount.
-Also, these implementations bust be located in `core.basesyntax.strategy.impl` package.
-And class context that must be called `DiscountStrategyContext` 
+`getDiscount()` must return discount according to table above.
+Also, these implementations must be located in `core.basesyntax.strategy.impl` package.
+
+The last step will be creation of class called `DiscountCenter` 
 and located in `core.basesyntax` package. It must have 
-method `calculatePriceWithDiscount()` too but in this case 
-it must return the result of specific `DiscountStrategy` implementation
-that will be passed in its constructor.
+method `getDiscountBySpecialEvent(String specialEvent)` with return type `double`
+where `specialEvent` can have such values: `"Birthday"`, `"Black Friday"`, `"New Year"`.
+
+Using `specialEvent` you must write code that defines `DiscountService` implementation
+and call its `getDiscount()` method.
+
+In case if passed `specialEvent` doesn't have specific implementation
+you must return `0.0`.
