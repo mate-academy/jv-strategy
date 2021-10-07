@@ -13,6 +13,7 @@ You must create its implementations (with the same names) with such discounts:
 
 | Implementation name |Discount |
 | :---: | :---: |
+| DefaultDiscountService| 0 |
 | NewYearDiscountService| 20 |
 | BirthdayDiscountService| 33 |
 | BlackFridayDiscountService| 45 |
@@ -30,4 +31,4 @@ Using `specialEvent` you must write code that defines `DiscountService` implemen
 and call its `getDiscount()` method.
 
 In case if passed `specialEvent` doesn't have specific implementation
-you must return `0.0`.
+you must return `DefaultDiscountService` by default.
