@@ -1,28 +1,30 @@
 package core.basesyntax;
 
 import java.lang.reflect.Method;
-import java.util.List;
+import java.util.Map;
+
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class StrategyTest {
   private static final double DELTA = 0.0;
-  private static List<Double> discounts;
-  private static List<String> specialEvents;
+  private static Map<String, Double> specialEventsDiscounts;
 
   @BeforeClass
   public static void setUp() {
-    specialEvents = List.of("Birthday", "Black Friday", "New Year", "Other event");
-    discounts = List.of(33.0, 45.0, 20.0, 0.0);
+    specialEventsDiscounts = Map.of("Birthday", 33.0,
+        "Black Friday", 45.0,
+        "New Year", 20.0,
+        "Other event", 0.0);
   }
 
   @Test
   public void getDiscountBySpecialEvent_IsOk() {
-    for (int i = 0; i < discounts.size(); i++) {
-      DiscountCenter discountCenter = new DiscountCenter();
-      double expectedDiscount = discounts.get(i);
-      double actualDiscount = discountCenter.getDiscountBySpecialEvent(specialEvents.get(i));
+    for (String specialEvent : specialEventsDiscounts.keySet()) {
+      DiscountStrategy discountStrategy = new DiscountStrategy();
+      double expectedDiscount = specialEventsDiscounts.get(specialEvent);
+      double actualDiscount = discountStrategy.getDiscountBySpecialEvent(specialEvent);
       Assert.assertEquals("Expected discount " + expectedDiscount
               + ",but your discount " + actualDiscount,
           expectedDiscount, actualDiscount, DELTA);
@@ -54,10 +56,10 @@ public class StrategyTest {
   }
 
   @Test
-  public void classDiscountCenter_IsCreated() {
+  public void classDiscountStrategy_IsCreated() {
     try {
-      Class<?> discountCenterClass = Class.forName("core.basesyntax.DiscountCenter");
-      checkHasMethodGetDiscountBySpecialEvent(discountCenterClass);
+      Class<?> discountStrategyClass = Class.forName("core.basesyntax.DiscountStrategy");
+      checkHasMethodGetDiscountBySpecialEvent(discountStrategyClass);
     } catch (ClassNotFoundException e) {
       Assert.assertTrue("Interface DiscountStrategy isn't created " +
           "or created in wrong directory\n", true);
