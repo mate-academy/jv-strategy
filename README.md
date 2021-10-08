@@ -22,13 +22,12 @@ Each of this implementation in result of execution of method
 `getDiscount()` must return discount according to table above.
 Also, these implementations must be located in `core.basesyntax.strategy.impl` package.
 
-The last step will be creation of class called `DiscountCenter` 
+The last step will be creation of class called `DiscountStrategy` 
 and located in `core.basesyntax` package. It must have 
-method `getDiscountBySpecialEvent(String specialEvent)` with return type `double`
+method `getDiscountServiceBySpecialEvent(String specialEvent)` with return type `DiscountService`
 where `specialEvent` can have such values: `"Birthday"`, `"Black Friday"`, `"New Year"`.
 
-Using `specialEvent` you must write code that defines `DiscountService` implementation
-and call its `getDiscount()` method.
+Using `specialEvent`, you must write code that defines `DiscountService` implementation.
 
 In case if passed `specialEvent` doesn't have specific implementation
 you must return `DefaultDiscountService` by default.
