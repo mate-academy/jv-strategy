@@ -16,7 +16,7 @@ public class StrategyTest {
     specialEventsDiscounts = Map.of("Birthday", 33.0,
         "Black Friday", 45.0,
         "New Year", 20.0,
-        "Other event", 0.0);
+        "Default event", 0.0);
   }
 
   @Test
@@ -26,7 +26,7 @@ public class StrategyTest {
       double expectedDiscount = specialEventsDiscounts.get(specialEvent);
       double actualDiscount = discountStrategy.getDiscountServiceBySpecialEvent(specialEvent)
           .getDiscount();
-      Assert.assertEquals("Expected discount " + expectedDiscount
+      Assert.assertEquals("Expected discount of " + specialEvent + " " + expectedDiscount
               + ",but your discount " + actualDiscount,
           expectedDiscount, actualDiscount, DELTA);
     }
