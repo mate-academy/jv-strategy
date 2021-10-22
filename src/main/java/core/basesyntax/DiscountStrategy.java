@@ -6,17 +6,22 @@ import core.basesyntax.strategy.impl.BlackFridayDiscountServiceImpl;
 import core.basesyntax.strategy.impl.DefaultDiscountServiceImpl;
 import core.basesyntax.strategy.impl.NewYearDiscountServiceImpl;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class DiscountStrategy {
+    private static final Map<String, DiscountService> instances = new HashMap<>();
+
+    static {
+        instances.put("Birthday", new BirthdayDiscountServiceImpl());
+        instances.put("New Year", new NewYearDiscountServiceImpl());
+        instances.put("Black Friday", new BlackFridayDiscountServiceImpl());
+    }
+
     public DiscountService getDiscountServiceBySpecialEvent(String specialEvent) {
-     switch (specialEvent) {
-         case "Birthday" :
-             return new BirthdayDiscountServiceImpl();
-         case "New Year":
-             return new NewYearDiscountServiceImpl();
-         case "Black Friday":
-             return new BlackFridayDiscountServiceImpl();
-         default:
-             return new DefaultDiscountServiceImpl();
-     }
+        if (instances.containsKey(specialEvent)) {
+            return instances.get(specialEvent);
+        }
+        return new DefaultDiscountServiceImpl();
     }
 }
