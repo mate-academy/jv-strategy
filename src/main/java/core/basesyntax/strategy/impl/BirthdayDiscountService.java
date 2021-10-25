@@ -3,10 +3,10 @@ package core.basesyntax.strategy.impl;
 import core.basesyntax.strategy.DiscountService;
 
 public class BirthdayDiscountService implements DiscountService {
-    private static final int birthdayDiscount = 33;
+    private static final int BIRTHDAY_DISCOUNT = 33;
 
     @Override
     public double getDiscount() {
-        return birthdayDiscount;
+        return BIRTHDAY_DISCOUNT;
     }
 }
