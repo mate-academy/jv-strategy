@@ -10,7 +10,3 @@ public class BlackFridayDiscountService implements DiscountService {
         return DISCOUNT;
     }
 }
-
-
-
-

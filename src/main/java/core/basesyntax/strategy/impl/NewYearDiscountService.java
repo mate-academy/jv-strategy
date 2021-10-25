@@ -9,5 +9,4 @@ public class NewYearDiscountService implements DiscountService {
     public double getDiscount() {
         return DISCOUNT;
     }
-
 }
