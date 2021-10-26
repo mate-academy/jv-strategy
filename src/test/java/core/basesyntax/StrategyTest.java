@@ -47,10 +47,10 @@ public class StrategyTest {
   @Test
   public void interfaceDiscountService_HasThreeImplementations() {
     try {
-      Class.forName("core.basesyntax.strategy.impl.BirthdayDiscountService");
-      Class.forName("core.basesyntax.strategy.impl.BlackFridayDiscountService");
-      Class.forName("core.basesyntax.strategy.impl.NewYearDiscountService");
-      Class.forName("core.basesyntax.strategy.impl.DefaultDiscountService");
+      Class.forName("core.basesyntax.strategy.impl.BirthdayDiscountServiceImpl");
+      Class.forName("core.basesyntax.strategy.impl.BlackFridayDiscountServiceImpl");
+      Class.forName("core.basesyntax.strategy.impl.NewYearDiscountServiceImpl");
+      Class.forName("core.basesyntax.strategy.impl.DefaultDiscountServiceImpl");
     } catch (ClassNotFoundException e) {
       Assert.assertTrue("There is no such package as core.basesyntax.strategy.impl " +
           "or you didn't create all needed implementations\n", true);
