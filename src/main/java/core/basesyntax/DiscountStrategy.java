@@ -16,6 +16,3 @@ public class DiscountStrategy {
         }
     }
 }
-
-
-//"Birthday", "Black Friday", "New Year".
