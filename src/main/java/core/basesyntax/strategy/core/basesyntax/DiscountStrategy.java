@@ -7,17 +7,13 @@ import core.basesyntax.strategy.impl.DefaultDiscountService;
 import core.basesyntax.strategy.impl.NewYearDiscountService;
 
 public class DiscountStrategy {
-    private static final String BIRTHDAY_EVENT = "Birthday";
-    private static final String BLACK_FRIDAY_EVENT = "Black Friday";
-    private static final String NEY_YEAR_EVENT = "New Year";
-
     public DiscountService getDiscountServiceBySpecialEvent(String specialEvent) {
         switch (specialEvent) {
-            case NEY_YEAR_EVENT:
+            case "New Year":
                 return new NewYearDiscountService();
-            case BIRTHDAY_EVENT:
+            case "Birthday":
                 return new BirthdayDiscountService();
-            case BLACK_FRIDAY_EVENT:
+            case "Black Friday":
                 return new BlackFridayDiscountService();
             default:
                 return new DefaultDiscountService();
