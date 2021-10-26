@@ -8,7 +8,6 @@ import core.basesyntax.strategy.impl.NewYearDiscountServiceImpl;
 
 public class DiscountStrategy {
     public DiscountService getDiscountServiceBySpecialEvent(String specialEvent) {
-
         switch (specialEvent) {
             case "Birthday" :
                 return new BirthdayDiscountServiceImpl();
@@ -20,5 +19,4 @@ public class DiscountStrategy {
                 return new DefaultDiscountServiceImpl();
         }
     }
-
 }
