@@ -8,6 +8,8 @@ import core.basesyntax.strategy.impl.NewYearDiscountService;
 
 public class DiscountStrategy {
 
+    public static final double[] DISCOUNTS = {0, 20, 33, 45};
+
     DiscountService getDiscountServiceBySpecialEvent(String specialEvent) {
         switch (specialEvent) {
             case "Birthday": {
