@@ -12,7 +12,8 @@ public class Main {
         System.out.println(new BirthdayDiscountService().getDiscount());
         System.out.println(new BlackFridayDiscountService().getDiscount());
 
-        DiscountStrategy discountStrategy = new DiscountStrategy();
-        System.out.println(discountStrategy.getDiscountServiceBySpecialEvent("New Year"));
+        System.out.println(new DiscountStrategy()
+                .getDiscountServiceBySpecialEvent("New Year")
+                .getDiscount());
     }
 }
