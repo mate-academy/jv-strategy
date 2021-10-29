@@ -22,6 +22,5 @@ public class DiscountStrategy {
                 return new DefaultDiscountService();
             }
         }
-
     }
 }
