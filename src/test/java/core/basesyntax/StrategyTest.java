@@ -1,5 +1,6 @@
 package core.basesyntax;
 
+import core.basesyntax.strategy.DiscountService;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
