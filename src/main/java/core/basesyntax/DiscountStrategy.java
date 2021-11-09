@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class DiscountStrategy {
+    private static final DiscountService defaultDiscountService = new DefaultDiscountService();
     private static final Map<String, DiscountService> discountServiceMap = new HashMap<>() {{
             put("Birthday", new BirthdayDiscountService());
             put("Black Friday", new BlackFridayDiscountService());
@@ -16,6 +17,6 @@ public class DiscountStrategy {
         }};
 
     DiscountService getDiscountServiceBySpecialEvent(String specialEvent) {
-        return discountServiceMap.getOrDefault(specialEvent, new DefaultDiscountService());
+        return discountServiceMap.getOrDefault(specialEvent, defaultDiscountService);
     }
 }
