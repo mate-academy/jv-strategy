@@ -31,3 +31,5 @@ Using `specialEvent`, you must write code that defines `DiscountService` impleme
 
 In case if passed `specialEvent` doesn't have specific implementation
 you must return `DefaultDiscountService` by default.
+
+#### [Try to avoid these common mistakes, while solving task](https://mate-academy.github.io/jv-program-common-mistakes/java-core/patterns/strategy)
