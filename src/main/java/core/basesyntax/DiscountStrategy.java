@@ -12,7 +12,7 @@ public class DiscountStrategy {
     public static final String BIRTHDAY = "Birthday";
     public static final String BLACK = "Black Friday";
     public static final String NEW = "New Year";
-    public  static final String DEFAULT = "Default";
+    public static final String DEFAULT = "Default";
 
     DiscountService getDiscountServiceBySpecialEvent(String specialEvent) {
         Map<String, DiscountService> mapOfDiscountServices = new HashMap<>();
