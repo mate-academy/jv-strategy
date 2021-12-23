@@ -1,6 +1,6 @@
 package core.basesyntax;
 
-import core.basesyntax.stradegy.DiscountService;
+import core.basesyntax.strategy.DiscountService;
 
 public class Main {
     public static void main(String[] args) {

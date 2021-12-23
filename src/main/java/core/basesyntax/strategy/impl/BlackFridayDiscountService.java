@@ -1,6 +1,6 @@
-package core.basesyntax.stradegy.impl;
+package core.basesyntax.strategy.impl;
 
-import core.basesyntax.stradegy.DiscountService;
+import core.basesyntax.strategy.DiscountService;
 
 public class BlackFridayDiscountService implements DiscountService {
     public double getDiscount() {
