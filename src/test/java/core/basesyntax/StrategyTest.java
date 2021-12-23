@@ -1,6 +1,6 @@
 package core.basesyntax;
 
-import core.basesyntax.strategy.DiscountService;
+import core.basesyntax.stradegy.DiscountService;
 import java.lang.reflect.Method;
 import java.util.Map;
 import org.junit.Assert;
