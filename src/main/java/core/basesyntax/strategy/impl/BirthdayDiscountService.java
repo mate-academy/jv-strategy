@@ -1,6 +1,8 @@
 package core.basesyntax.strategy.impl;
 
-public class BirthdayDiscountService {
+import core.basesyntax.strategy.DiscountService;
+
+public class BirthdayDiscountService implements DiscountService {
     private static final double DISCOUNT = 33.0;
     @Override
     public double getDiscount() {

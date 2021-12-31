@@ -15,16 +15,16 @@ public class DiscountStrategy {
     public DiscountService getDiscountServiceBySpecialEvent(String specialEvent) {
         switch (specialEvent) {
             case BIRTHDAY: {
-                return (DiscountService) new BirthdayDiscountService();
+                return new BirthdayDiscountService();
             }
             case NEW_YEAR: {
-                return (DiscountService) new NewYearDiscountService();
+                return new NewYearDiscountService();
             }
             case BLACK_FRIDAY: {
-                return (DiscountService) new BlackFridayDiscountService();
+                return new BlackFridayDiscountService();
             }
             default: {
-                return (DiscountService) new DefaultDiscountService();
+                return new DefaultDiscountService();
             }
         }
     }
