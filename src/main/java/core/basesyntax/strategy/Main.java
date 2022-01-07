@@ -1,8 +1,5 @@
 package core.basesyntax.strategy;
 
-import core.basesyntax.strategy.DiscountService;
-import core.basesyntax.strategy.DiscountStrategy;
-
 public class Main {
     public static void main(String[] args) {
         DiscountStrategy strategy = new DiscountStrategy();
