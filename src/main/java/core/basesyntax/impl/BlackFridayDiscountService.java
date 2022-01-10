@@ -4,7 +4,7 @@ import core.basesyntax.strategy.DiscountService;
 
 public class BlackFridayDiscountService implements DiscountService {
     @Override
-    public double getDiscount(double price) {
-        return price - price * 0.45;
+    public double getDiscount() {
+        return 45;
     }
 }
