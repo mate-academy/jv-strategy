@@ -1,7 +1,5 @@
 package core.basesyntax;
 
-import core.basesyntax.DiscountStrategy;
-
 public class Main {
     public static void main(String[] args) {
         String specialEvent = "New Year";
