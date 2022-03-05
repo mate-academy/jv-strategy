@@ -1,10 +1,13 @@
 package core.basesyntax;
 
 import core.basesyntax.strategy.DiscountService;
-import core.basesyntax.strategy.impl.*;
+import core.basesyntax.strategy.impl.BirthdayDiscountService;
+import core.basesyntax.strategy.impl.BlackFridayDiscountService;
+import core.basesyntax.strategy.impl.NewYearDiscountService;
+import core.basesyntax.strategy.impl.DefaultDiscountService;
 
 public class DiscountStrategy {
-    DiscountService getDiscountServiceBySpecialEvent(String specialEvent){
+    DiscountService getDiscountServiceBySpecialEvent(String specialEvent) {
         switch (specialEvent) {
             case "Birthday":
                 return new BirthdayDiscountService();
