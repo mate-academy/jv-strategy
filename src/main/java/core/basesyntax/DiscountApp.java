@@ -1,7 +1,5 @@
 package core.basesyntax;
 
-import core.basesyntax.DiscountStrategy;
-
 /**
  * @version 1.0
  * @autor Denys.Shl

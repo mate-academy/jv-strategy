@@ -14,7 +14,7 @@ import core.basesyntax.strategy.impl.NewYearDiscountService;
  */
 public class DiscountStrategy {
     public DiscountService getDiscountServiceBySpecialEvent(String specialEvent) {
-        switch (specialEvent.toUpperCase().replaceAll(" ","")) {
+        switch (specialEvent.toUpperCase().replaceAll(" ", "")) {
             case "BIRTHDAY":
                 return new BirthdayDiscountService();
             case "NEWYEAR":
