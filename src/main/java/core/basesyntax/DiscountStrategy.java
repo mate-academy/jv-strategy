@@ -7,8 +7,7 @@ import core.basesyntax.strategy.DiscountService;
 import core.basesyntax.strategy.NewYearDiscountService;
 
 public class DiscountStrategy {
-
-    DiscountService getDiscountServiceBySpecialEvent(String specialEvent) {
+    public DiscountService getDiscountServiceBySpecialEvent(String specialEvent) {
         switch (specialEvent) {
             case "New Year":
                 return new NewYearDiscountService();
