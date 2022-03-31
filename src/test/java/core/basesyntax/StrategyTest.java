@@ -1,5 +1,6 @@
 package core.basesyntax;
 
+import core.baesesyntax.DiscountStrategy;
 import core.basesyntax.strategy.DiscountService;
 import java.lang.reflect.Method;
 import java.util.Map;
@@ -60,10 +61,10 @@ public class StrategyTest {
   @Test
   public void classDiscountStrategy_IsCreated() {
     try {
-      Class<?> discountStrategyClass = Class.forName("core.basesyntax.DiscountStrategy");
+      Class<?> discountStrategyClass = Class.forName("core.basesyntax.DiscountService");
       checkHasMethodGetDiscountServiceBySpecialEvent(discountStrategyClass);
     } catch (ClassNotFoundException e) {
-      Assert.assertTrue("Class DiscountStrategy isn't created " +
+      Assert.assertTrue("Class DiscountService isn't created " +
           "or created in wrong directory\n", true);
     }
   }
