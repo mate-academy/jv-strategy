@@ -1,9 +1,9 @@
-package core.basesyntax;
+package core;
 
-import core.baesesyntax.DiscountStrategy;
-import core.basesyntax.strategy.DiscountService;
 import java.lang.reflect.Method;
 import java.util.Map;
+import core.basesyntax.DiscountStrategy;
+import core.basesyntax.strategy.DiscountService;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
