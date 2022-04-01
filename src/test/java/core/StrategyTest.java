@@ -64,7 +64,7 @@ public class StrategyTest {
       Class<?> discountStrategyClass = Class.forName("core.basesyntax.DiscountService");
       checkHasMethodGetDiscountServiceBySpecialEvent(discountStrategyClass);
     } catch (ClassNotFoundException e) {
-      Assert.assertTrue("Class DiscountService isn't created " +
+      Assert.assertTrue("Class DiscountStrategy isn't created " +
           "or created in wrong directory\n", true);
     }
   }
