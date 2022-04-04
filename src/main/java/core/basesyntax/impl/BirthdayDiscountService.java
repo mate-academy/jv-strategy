@@ -1,6 +1,6 @@
 package core.basesyntax.impl;
 
-import core.basesyntax.DiscountService;
+import core.basesyntax.strategy.DiscountService;
 
 public class BirthdayDiscountService implements DiscountService {
     @Override
