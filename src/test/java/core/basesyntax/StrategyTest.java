@@ -1,6 +1,7 @@
 package core.basesyntax;
 
 import core.basesyntax.strategy.DiscountService;
+
 import java.lang.reflect.Method;
 import java.util.Map;
 import org.junit.Assert;
@@ -35,11 +36,11 @@ public class StrategyTest {
   @Test
   public void interfaceDiscountService_IsCreated() {
     try {
-      Class<?> discountServiceInterface = Class.forName("core.basesyntax.strategy.DiscountService");
-      Assert.assertTrue("DiscountService must be an interface\n", discountServiceInterface.isInterface());
+      Class<?> discountServiceInterface = Class.forName("core.basesyntax.strategy.core.basesyntax.strategy.DiscountService");
+      Assert.assertTrue("core.basesyntax.strategy.DiscountService must be an interface\n", discountServiceInterface.isInterface());
       checkHasMethodGetDiscount(discountServiceInterface);
     } catch (ClassNotFoundException e) {
-      Assert.assertTrue("Interface DiscountService isn't created " +
+      Assert.assertTrue("Interface core.basesyntax.strategy.DiscountService isn't created " +
           "or created in wrong directory\n", true);
     }
   }
@@ -63,7 +64,7 @@ public class StrategyTest {
       Class<?> discountStrategyClass = Class.forName("core.basesyntax.DiscountStrategy");
       checkHasMethodGetDiscountServiceBySpecialEvent(discountStrategyClass);
     } catch (ClassNotFoundException e) {
-      Assert.assertTrue("Class DiscountStrategy isn't created " +
+      Assert.assertTrue("Class core.basesyntax.DiscountStrategy isn't created " +
           "or created in wrong directory\n", true);
     }
   }
