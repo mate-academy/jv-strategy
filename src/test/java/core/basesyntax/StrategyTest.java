@@ -2,6 +2,7 @@ package core.basesyntax;
 
 import core.basesyntax.strategy.DiscountService;
 import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 import java.util.Map;
 import org.junit.Assert;
 import org.junit.BeforeClass;
@@ -74,13 +75,14 @@ public class StrategyTest {
     Method[] methods = discountStrategyClass.getDeclaredMethods();
     for (Method method : methods) {
       boolean isGetDiscountServiceBySpecialEventOk = method.getReturnType().equals(DiscountService.class)
+          && Modifier.isPublic(method.getModifiers())
           && method.getParameters().length == 1
           && method.getParameters()[0].getType().equals(String.class);
       if (isGetDiscountServiceBySpecialEventOk) {
         return;
       }
     }
-    Assert.assertFalse(interfaceName + " must have method getDiscountServiceBySpecialEvent() " +
+    Assert.assertFalse(interfaceName + " must have public method getDiscountServiceBySpecialEvent() " +
         "that returns double and accepts String parameter\n", false);
   }
 
