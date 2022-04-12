@@ -2,7 +2,9 @@ package core.basesyntax;
 
 import core.basesyntax.strategy.DiscountService;
 import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 import java.util.Map;
+import core.basesyntax.strategy.DiscountStrategy;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -60,7 +62,7 @@ public class StrategyTest {
   @Test
   public void classDiscountStrategy_IsCreated() {
     try {
-      Class<?> discountStrategyClass = Class.forName("core.basesyntax.DiscountStrategy");
+      Class<?> discountStrategyClass = Class.forName("core.basesyntax.strategy.DiscountStrategy");
       checkHasMethodGetDiscountServiceBySpecialEvent(discountStrategyClass);
     } catch (ClassNotFoundException e) {
       Assert.assertTrue("Class DiscountStrategy isn't created " +
@@ -74,13 +76,14 @@ public class StrategyTest {
     Method[] methods = discountStrategyClass.getDeclaredMethods();
     for (Method method : methods) {
       boolean isGetDiscountServiceBySpecialEventOk = method.getReturnType().equals(DiscountService.class)
+          && Modifier.isPublic(method.getModifiers())
           && method.getParameters().length == 1
           && method.getParameters()[0].getType().equals(String.class);
       if (isGetDiscountServiceBySpecialEventOk) {
         return;
       }
     }
-    Assert.assertFalse(interfaceName + " must have method getDiscountServiceBySpecialEvent() " +
+    Assert.assertFalse(interfaceName + " must have public method getDiscountServiceBySpecialEvent() " +
         "that returns double and accepts String parameter\n", false);
   }
 
