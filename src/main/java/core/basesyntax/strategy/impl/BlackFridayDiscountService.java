@@ -2,7 +2,7 @@ package core.basesyntax.strategy.impl;
 
 import core.basesyntax.strategy.DiscountService;
 
-public class BlackFridayDiscountService implements DiscountService {
+public class BlackFridayDiscountService extends Event implements DiscountService {
     private static final double BLACK_FRIDAY_DISCOUNT = 45;
 
     @Override

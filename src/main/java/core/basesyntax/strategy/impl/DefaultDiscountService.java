@@ -2,7 +2,7 @@ package core.basesyntax.strategy.impl;
 
 import core.basesyntax.strategy.DiscountService;
 
-public class DefaultDiscountService implements DiscountService {
+public class DefaultDiscountService extends Event implements DiscountService {
     private static final double DEFUALT_DISCOUNT = 0;
 
     @Override
