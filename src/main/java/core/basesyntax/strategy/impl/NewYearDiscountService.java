@@ -4,7 +4,7 @@ import core.basesyntax.strategy.DiscountService;
 
 public class NewYearDiscountService implements DiscountService {
     @Override
-    public double getDiscount(double amount) {
-        return amount - (amount * 0.2);
+    public double getDiscount() {
+        return (double) 20;
     }
 }
