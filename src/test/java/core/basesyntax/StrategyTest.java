@@ -3,6 +3,7 @@ package core.basesyntax;
 import core.basesyntax.strategy.DiscountService;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
+import java.util.HashMap;
 import java.util.Map;
 import org.junit.Assert;
 import org.junit.BeforeClass;
@@ -14,10 +15,10 @@ public class StrategyTest {
 
   @BeforeClass
   public static void setUp() {
-    specialEventsDiscounts = Map.of("Birthday", 33.0,
-        "Black Friday", 45.0,
-        "New Year", 20.0,
-        "Default event", 0.0);
+    specialEventsDiscounts = new HashMap<>();
+    specialEventsDiscounts.put("Birthday", 33.0);
+    specialEventsDiscounts.put("New Year", 20.0);
+    specialEventsDiscounts.put("Default event", 0.0);
   }
 
   @Test
