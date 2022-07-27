@@ -13,7 +13,7 @@ public class DiscountStrategy {
                 : return new NewYearDiscountService();
             case "Black Friday"
                 : return new BlackFridayDiscountService();
-            case "Birth Day"
+            case "Birthday"
                 : return new BirthdayDiscountService();
             default: return new DefaultDiscountService();
         }
