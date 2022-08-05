@@ -12,9 +12,9 @@ public class DiscountStrategy {
             case "Black Friday":
                 return new BlackFridayDiscountService();
             case "New Year":
-                return  new NewYearDiscountService();
+                return new NewYearDiscountService();
             case "Birthday":
-                return  new BirthdayDiscountService();
+                return new BirthdayDiscountService();
             default:
                 return new DefaultDiscountService();
         }
