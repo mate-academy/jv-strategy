@@ -59,7 +59,8 @@ public class StrategyTest {
   }
 
   @Test
-  public void classDiscountStrategy_IsCreated() {
+  public void
+  classDiscountStrategy_IsCreated() {
     try {
       Class<?> discountStrategyClass = Class.forName("core.basesyntax.DiscountStrategy");
       checkHasMethodGetDiscountServiceBySpecialEvent(discountStrategyClass);
