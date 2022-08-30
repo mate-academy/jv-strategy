@@ -14,7 +14,7 @@ public class DiscountStrategy {
             case "Birthday":
                 return new BirthdayDiscountService();
             case "New Year":
-                    return new NewYearDiscountService();
+                return new NewYearDiscountService();
             default:
                 return new DefaultDiscountService();
         }
