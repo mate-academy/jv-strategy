@@ -1,7 +1,6 @@
 package core.basesyntax;
 
 public class DiscountStrategy {
-
     DiscountService getDiscountServiceBySpecialEvent(String specialEvent) {
         switch (specialEvent) {
             case "Birthday":
