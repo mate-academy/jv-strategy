@@ -8,7 +8,7 @@ In this task we'll need help of Strategy pattern.
 First of all, you need to create `DiscountService` interface 
 with method `getDiscount()` with return type `double`. 
 It must be located in `core.basesyntax.strategy` package.
-
+ 
 You must create its implementations (with the same names) with such discounts:
 
 | Implementation name |Discount |
