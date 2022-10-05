@@ -1,0 +1,12 @@
+package core.basesyntax.strategy.impl;
+
+import core.basesyntax.strategy.DiscountService;
+
+public class BlackFridayDiscountService implements DiscountService {
+    public static final double BLACK_FRIDAY_DISCOUNT = 45.0d;
+
+    @Override
+    public double getDiscount() {
+        return BLACK_FRIDAY_DISCOUNT;
+    }
+}
