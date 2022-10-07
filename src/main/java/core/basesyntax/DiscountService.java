@@ -24,7 +24,8 @@ public class DiscountService {
             return discount;
         }
         if (specialEvent.equals("New Year")) {
-            BlackFridayDiscountService blackFridayDiscountService = new BlackFridayDiscountService();
+            BlackFridayDiscountService
+                    blackFridayDiscountService = new BlackFridayDiscountService();
             final double discount = blackFridayDiscountService.getDiscount();
             return discount;
         } else {
