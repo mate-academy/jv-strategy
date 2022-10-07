@@ -18,12 +18,12 @@ public class DiscountService {
             final double discount = birthdayDiscountService.getDiscount();
             return discount;
         }
-        if (specialEvent.equals("Black Friday")) {
+        if (specialEvent.equals("New Year")) {
             NewYearDiscountService newYearDiscountService = new NewYearDiscountService();
             final double discount = newYearDiscountService.getDiscount();
             return discount;
         }
-        if (specialEvent.equals("New Year")) {
+        if (specialEvent.equals("Black Friday")) {
             BlackFridayDiscountService
                     blackFridayDiscountService = new BlackFridayDiscountService();
             final double discount = blackFridayDiscountService.getDiscount();
