@@ -1,6 +1,6 @@
 package core.basesyntax;
 
-public class BlackFridayDiscountService implements DiscountService{
+public class BlackFridayDiscountService implements DiscountService {
 
     @Override
     public double getDiscount() {
