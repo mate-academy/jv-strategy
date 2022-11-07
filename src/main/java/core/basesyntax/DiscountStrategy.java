@@ -7,7 +7,7 @@ import core.basesyntax.strategy.impl.DefaultDiscountService;
 
 public class DiscountStrategy {
     public DiscountService getDiscountServiceBySpecialEvent(String specialEvent) {
-        switch(specialEvent) {
+        switch (specialEvent) {
             case("New Year"):
                 return new DiscountService() {
                     @Override
