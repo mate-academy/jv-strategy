@@ -4,7 +4,5 @@ import core.basesyntax.DiscountService;
 
 public class Birthday extends DiscountService {
     @Override
-    public double getDiscount() {
-        return 33;
-    }
+    public double getDiscount() { return 33; }
 }
