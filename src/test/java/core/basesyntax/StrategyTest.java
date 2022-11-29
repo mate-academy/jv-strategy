@@ -5,7 +5,6 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.Map;
 
-import core.basesyntax.strategy.DiscountStrategy;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -63,7 +62,7 @@ public class StrategyTest {
   @Test
   public void classDiscountStrategy_IsCreated() {
     try {
-      Class<?> discountStrategyClass = Class.forName("core.basesyntax.strategy.DiscountStrategy");
+      Class<?> discountStrategyClass = Class.forName("core.basesyntax.DiscountStrategy");
       checkHasMethodGetDiscountServiceBySpecialEvent(discountStrategyClass);
     } catch (ClassNotFoundException e) {
       Assert.assertTrue("Class DiscountStrategy isn't created " +
