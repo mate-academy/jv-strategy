@@ -74,7 +74,7 @@ public class StrategyTest {
     String interfaceName = discountStrategyClass.getName().split("\\.")[pathLength - 1];
     Method[] methods = discountStrategyClass.getDeclaredMethods();
     for (Method method : methods) {
-      boolean isGetDiscountServiceBySpecialEventOk = method.getReturnType().equals(DiscountService.class)
+      boolean isGetDiscountServiceBySpecialEventOk = method.getReturnType().equals(DiscountStrategy.class)
           && Modifier.isPublic(method.getModifiers())
           && method.getParameters().length == 1
           && method.getParameters()[0].getType().equals(String.class);
