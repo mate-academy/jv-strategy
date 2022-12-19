@@ -12,7 +12,6 @@ public class Main {
         double discount = discountService.getDiscount(900);
         System.out.println(discount);
 
-
     }
 
 }
