@@ -4,7 +4,7 @@ import core.basesyntax.strategy.DiscountService;
 
 public class DefaultDiscountService implements DiscountService {
     @Override
-    public double getDiscount(int basicPrice) {
-        return (double) (basicPrice / 100) * 0;
+    public double getDiscount() {
+        return 0;
     }
 }
