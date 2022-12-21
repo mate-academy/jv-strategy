@@ -1,7 +1,7 @@
 # jv-strategy
 
 ---
-Imagine you have сhain of stores. You need to implement discount system for people 
+Imagine you have chain of stores. You need to implement discount system for people 
 in some special events of a year like New Year.
 
 In this task we'll need help of Strategy pattern.
