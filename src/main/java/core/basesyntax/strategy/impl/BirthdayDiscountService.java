@@ -6,6 +6,6 @@ public class BirthdayDiscountService implements DiscountService {
 
     @Override
     public double getDiscount() {
-        return 30.0;
+        return 33.0;
     }
 }
