@@ -1,8 +1,9 @@
 package core.basesyntax;
 
-/**
- * Feel free to remove this class and create your own.
- */
 public class HelloWorld {
-
+    public static void main(String[] args) {
+        DiscountStrategy discountStrategy = new DiscountStrategy();
+        double result = discountStrategy.getDiscountServiceBySpecialEvent("DefaultDiscountService").getDiscount();
+        System.out.println(result);
+    }
 }
