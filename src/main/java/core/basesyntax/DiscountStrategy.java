@@ -1,6 +1,4 @@
 package core.basesyntax;
-
-
 import core.basesyntax.strategy.impl.*;
 
 public class DiscountStrategy {
