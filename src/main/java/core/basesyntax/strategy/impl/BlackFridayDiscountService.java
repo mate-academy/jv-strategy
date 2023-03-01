@@ -1,5 +1,7 @@
 package core.basesyntax.strategy.impl;
 
+import core.basesyntax.DiscountService;
+
 public class BlackFridayDiscountService implements DiscountService {
     @Override
     public double getDiscount() {
