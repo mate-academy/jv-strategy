@@ -36,11 +36,11 @@ public class StrategyTest {
   @Test
   public void interfaceDiscountService_IsCreated() {
     try {
-      Class<?> discountServiceInterface = Class.forName("core.basesyntax.strategy.DiscountService");
-      Assert.assertTrue("DiscountService must be an interface\n", discountServiceInterface.isInterface());
+      Class<?> discountServiceInterface = Class.forName("core.basesyntax.strategy.core.basesyntax.strategy.DiscountService");
+      Assert.assertTrue("core.basesyntax.strategy.DiscountService must be an interface\n", discountServiceInterface.isInterface());
       checkHasMethodGetDiscount(discountServiceInterface);
     } catch (ClassNotFoundException e) {
-      Assert.assertTrue("Interface DiscountService isn't created " +
+      Assert.assertTrue("Interface core.basesyntax.strategy.DiscountService isn't created " +
           "or created in wrong directory\n", true);
     }
   }
@@ -50,7 +50,7 @@ public class StrategyTest {
     try {
       Class.forName("core.basesyntax.strategy.impl.BirthdayDiscountService");
       Class.forName("core.basesyntax.strategy.impl.BlackFridayDiscountService");
-      Class.forName("core.basesyntax.strategy.impl.NewYearDiscountService");
+      Class.forName("core.basesyntax.strategy.impl.core.basesyntax.strategy.impl.NewYearDiscountService");
       Class.forName("core.basesyntax.strategy.impl.DefaultDiscountService");
     } catch (ClassNotFoundException e) {
       Assert.assertTrue("There is no such package as core.basesyntax.strategy.impl " +
