@@ -10,9 +10,9 @@ public class DiscountStrategy {
     public DiscountService getDiscountServiceBySpecialEvent(String specialEvent) {
         if (specialEvent.equalsIgnoreCase("Birthday")) {
             return new BirthdayDiscountService();
-        } if (specialEvent.equalsIgnoreCase("Black Friday")) {
+        } else if (specialEvent.equalsIgnoreCase("Black Friday")) {
             return new BlackFridayDiscountService();
-        } if (specialEvent.equalsIgnoreCase("New Year")) {
+        } else if (specialEvent.equalsIgnoreCase("New Year")) {
             return new NewYearDiscountService();
         } else {
             return new DefaultDiscountService();
