@@ -2,9 +2,10 @@ package core.basesyntax.strategy.impl;
 
 import core.basesyntax.strategy.DiscountService;
 
-public class BlackFriday implements DiscountService {
+public class DefaultDiscountService implements DiscountService {
+
     @Override
     public double getDiscount() {
-        return (double) 45.0;
+        return (double) 0.0;
     }
 }
