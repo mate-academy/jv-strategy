@@ -4,6 +4,7 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.Map;
 
+import core.basesyntax.strategy.DiscountService;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -36,7 +37,7 @@ public class StrategyTest {
   @Test
   public void interfaceDiscountService_IsCreated() {
     try {
-      Class<?> discountServiceInterface = Class.forName("core.basesyntax.strategy.DiscountService");
+      Class<?> discountServiceInterface = Class.forName("core.basesyntax.DiscountService");
       Assert.assertTrue("DiscountService must be an interface\n", discountServiceInterface.isInterface());
       checkHasMethodGetDiscount(discountServiceInterface);
     } catch (ClassNotFoundException e) {
@@ -48,10 +49,10 @@ public class StrategyTest {
   @Test
   public void interfaceDiscountService_HasThreeImplementations() {
     try {
-      Class.forName("core.basesyntax.strategy.impl.BirthdayDiscountService");
-      Class.forName("core.basesyntax.strategy.impl.BlackFridayDiscountService");
-      Class.forName("core.basesyntax.strategy.impl.NewYearDiscountService");
-      Class.forName("core.basesyntax.strategy.impl.DefaultDiscountService");
+      Class.forName("core.basesyntax.impl.BirthdayDiscountService");
+      Class.forName("core.basesyntax.impl.BlackFridayDiscountService");
+      Class.forName("core.basesyntax.impl.NewYearDiscountService");
+      Class.forName("core.basesyntax.impl.DefaultDiscountService");
     } catch (ClassNotFoundException e) {
       Assert.assertTrue("There is no such package as core.basesyntax.strategy.impl " +
           "or you didn't create all needed implementations\n", true);
