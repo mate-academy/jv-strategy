@@ -7,8 +7,8 @@ public class Main {
 
         DiscountStrategy strategy = new DiscountStrategy();
         DiscountService newYearDiscountService =
-                strategy.getDiscountServiceBySpecialEvent("Black Friday");
+                strategy.getDiscountServiceBySpecialEvent("New Year");
         double discount = newYearDiscountService.getDiscount();
-        System.out.println("Discount for Black Friday: " + (discount * 100) + "%");
+        System.out.println("Discount for New Year: " + (discount) + "%");
     }
 }
