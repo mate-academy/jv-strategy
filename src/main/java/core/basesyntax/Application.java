@@ -8,7 +8,8 @@ public class Application {
     private static final String SPECIAL_EVENT = "New Year";
 
     public static void main(String[] args) {
-        DiscountService blackFridayService = STRATEGY.getDiscountServiceBySpecialEvent(SPECIAL_EVENT);
+        DiscountService blackFridayService = STRATEGY
+                .getDiscountServiceBySpecialEvent(SPECIAL_EVENT);
         DISCOUNT = blackFridayService.getDiscount();
         System.out.println("Congratulations! You have "
                 + DISCOUNT
