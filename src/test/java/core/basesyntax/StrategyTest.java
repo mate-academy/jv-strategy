@@ -3,6 +3,7 @@ package core.basesyntax;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.Map;
+import core.basesyntax.strategy.DiscountService;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
