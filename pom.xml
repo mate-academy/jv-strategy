@@ -5,16 +5,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>mate-academy</groupId>
-    <artifactId>strategy</artifactId>
+    <artifactId>jv-strategy</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
         <jdk.version>17</jdk.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <maven.checkstyle.plugin.configLocation>
-            https://raw.githubusercontent.com/mate-academy/style-guides/master/java/checkstyle.xml
-        </maven.checkstyle.plugin.configLocation>
+        <maven.checkstyle.plugin.configLocation>https://raw.githubusercontent.com/mate-academy/style-guides/master/java/checkstyle.xml</maven.checkstyle.plugin.configLocation>
     </properties>
 
     <dependencies>
@@ -25,15 +23,16 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
     <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>3.3.0</version>
+                <version>3.1.1</version> <!-- Changed the version to a compatible one -->
                 <executions>
                     <execution>
-                        <phase>compile</phase>
+                        <phase>validate</phase> <!-- Changed the phase to 'validate' -->
                         <goals>
                             <goal>check</goal>
                         </goals>
@@ -53,7 +52,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.8.0</version>
+                    <version>3.8.1</version> <!-- Changed the version to a compatible one -->
                     <configuration>
                         <source>${jdk.version}</source>
                         <target>${jdk.version}</target>
@@ -64,4 +63,3 @@
         </pluginManagement>
     </build>
 </project>
-
