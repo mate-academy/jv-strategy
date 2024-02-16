@@ -1,4 +1,3 @@
-// core.basesyntax.strategy.impl.BirthdayDiscountService
 package core.basesyntax;
 
 public class BirthdayDiscountService implements DiscountService {

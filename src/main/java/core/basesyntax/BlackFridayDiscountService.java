@@ -1,4 +1,3 @@
-// core.basesyntax.strategy.impl.BlackFridayDiscountService
 package core.basesyntax;
 
 public class BlackFridayDiscountService implements DiscountService {

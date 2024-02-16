@@ -1,4 +1,3 @@
-// core.basesyntax.strategy.impl.DefaultDiscountService
 package core.basesyntax;
 
 public class DefaultDiscountService implements DiscountService {

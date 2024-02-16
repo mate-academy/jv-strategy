@@ -1,6 +1,4 @@
-// core.basesyntax.strategy.impl.NewYearDiscountService
 package core.basesyntax;
-
 
 public class NewYearDiscountService implements DiscountService {
     @Override

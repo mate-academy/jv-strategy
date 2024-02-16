@@ -1,4 +1,3 @@
-// core.basesyntax.DiscountStrategy
 package core.basesyntax;
 
 public class DiscountStrategy {
