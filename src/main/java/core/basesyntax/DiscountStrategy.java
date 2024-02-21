@@ -22,7 +22,9 @@ public class DiscountStrategy {
             case BIRTHDAY -> {
                 return new BirthdayDiscountService();
             }
+            default -> {
+                return new DefaultDiscountService();
+            }
         }
-        return new DefaultDiscountService();
     }
 }
