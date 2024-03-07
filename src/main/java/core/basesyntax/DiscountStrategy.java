@@ -12,7 +12,7 @@ public class DiscountStrategy {
     private static final String HAPPY_DIRTHDAY = "Birthday";
 
     public DiscountService getDiscountServiceBySpecialEvent(String specialEvent) {
-        switch(specialEvent) {
+        switch (specialEvent) {
             case NEW_YEAR -> {
                 return new NewYearDiscountService();
             }
@@ -20,7 +20,7 @@ public class DiscountStrategy {
                 return new BlackFridayDiscountService();
             }
             case HAPPY_DIRTHDAY -> {
-                return  new BirthdayDiscountService();
+                return new BirthdayDiscountService();
             }
             default -> {
                 return new DefaultDiscountService();
