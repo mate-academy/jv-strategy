@@ -25,8 +25,7 @@ public class StrategyTest {
     for (String specialEvent : specialEventsDiscounts.keySet()) {
       DiscountStrategy discountStrategy = new DiscountStrategy();
       double expectedDiscount = specialEventsDiscounts.get(specialEvent);
-      double actualDiscount = discountStrategy.getDiscountServiceBySpecialEvent(specialEvent)
-          .getDiscount();
+      double actualDiscount = discountStrategy.getDiscountServiceBySpecialEvent(specialEvent);
       Assert.assertEquals("Expected discount of " + specialEvent + " " + expectedDiscount
               + ",but your discount " + actualDiscount,
           expectedDiscount, actualDiscount, DELTA);
