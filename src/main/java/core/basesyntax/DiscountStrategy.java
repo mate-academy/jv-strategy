@@ -8,16 +8,12 @@ import core.basesyntax.strategy.impl.NewYearDiscountService;
 
 public class DiscountStrategy {
     public DiscountService getDiscountServiceBySpecialEvent(String specialEvent) {
-        switch (specialEvent) {
-            case "Birthday":
-                return new BirthdayDiscountService();
-            case "Black Friday":
-                return new BlackFridayDiscountService();
-            case "New Year":
-                return new NewYearDiscountService();
-            default:
-                return new DefaultDiscountService();
-        }
+        return switch (specialEvent) {
+            case "Birthday" -> new BirthdayDiscountService();
+            case "Black Friday" -> new BlackFridayDiscountService();
+            case "New Year" -> new NewYearDiscountService();
+            default -> new DefaultDiscountService();
+        };
 
     }
 }
