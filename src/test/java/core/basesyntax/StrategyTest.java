@@ -1,6 +1,7 @@
 package core.basesyntax;
 
-import core.basesyntax.strategy.DiscountService;
+import care.basesyntax.DiscountStrategy;
+import care.basesyntax.strategy.DiscountService;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.Map;
@@ -9,6 +10,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class StrategyTest {
+  private static final double PRICE = 100.0;
   private static final double DELTA = 0.0;
   private static Map<String, Double> specialEventsDiscounts;
 
@@ -26,7 +28,7 @@ public class StrategyTest {
       DiscountStrategy discountStrategy = new DiscountStrategy();
       double expectedDiscount = specialEventsDiscounts.get(specialEvent);
       double actualDiscount = discountStrategy.getDiscountServiceBySpecialEvent(specialEvent)
-          .getDiscount();
+          .getDiscount(PRICE);
       Assert.assertEquals("Expected discount of " + specialEvent + " " + expectedDiscount
               + ",but your discount " + actualDiscount,
           expectedDiscount, actualDiscount, DELTA);
@@ -36,7 +38,7 @@ public class StrategyTest {
   @Test
   public void interfaceDiscountService_IsCreated() {
     try {
-      Class<?> discountServiceInterface = Class.forName("core.basesyntax.strategy.DiscountService");
+      Class<?> discountServiceInterface = Class.forName("care.basesyntax.strategy.DiscountService");
       Assert.assertTrue("DiscountService must be an interface\n", discountServiceInterface.isInterface());
       checkHasMethodGetDiscount(discountServiceInterface);
     } catch (ClassNotFoundException e) {
