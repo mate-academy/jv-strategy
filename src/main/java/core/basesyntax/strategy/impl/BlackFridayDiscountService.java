@@ -8,3 +8,5 @@ public class BlackFridayDiscountService implements DiscountService {
         return 45.0;
     }
 }
+
+
