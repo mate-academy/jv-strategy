@@ -1,7 +1,10 @@
-package core.basesyntax.strategy;
+package core.basesyntax.strategy.impl;
+
+import core.basesyntax.strategy.DiscountService;
 
 public class BirthdayDiscountService implements DiscountService {
-
     @Override
-    public double getDi
+    public double getDiscount() {
+        return 33;
+    }
 }
