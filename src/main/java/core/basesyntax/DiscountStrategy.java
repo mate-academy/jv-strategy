@@ -1,7 +1,6 @@
 package core.basesyntax;
 
 import core.basesyntax.strategy.DiscountService;
-
 import java.util.HashMap;
 import java.util.Map;
 
