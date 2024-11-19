@@ -1,7 +1,4 @@
-package core.basesyntax.strategy.impl;
-import core.basesyntax.strategy.DiscountService;
-
-
+package core.basesyntax;
 public class BirthdayDiscountService implements DiscountService{
     public double getDiscount() {
         return 33.0;

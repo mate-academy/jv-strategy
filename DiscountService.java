@@ -1,6 +1,4 @@
-package core.basesyntax.strategy;
-
-
+package core.basesyntax;
 public interface DiscountService {
     double getDiscount();
 }
