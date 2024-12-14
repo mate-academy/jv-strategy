@@ -1,9 +1,8 @@
 package core.basesyntax;
 
+public class Main {
 
-public class main {
-
-    public static void main(String[] args) {
+    public static void Main(String[] args) {
         String specialEvent = "New Year";
         DiscountStrategy discountStrategy = new DiscountStrategy();
         double discountService = discountStrategy
