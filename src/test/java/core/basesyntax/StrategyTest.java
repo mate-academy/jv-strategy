@@ -8,7 +8,8 @@ import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class StrategyTest {
+public class
+StrategyTest {
   private static final double DELTA = 0.0;
   private static Map<String, Double> specialEventsDiscounts;
 
