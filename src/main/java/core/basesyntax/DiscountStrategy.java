@@ -12,10 +12,10 @@ public class DiscountStrategy {
             return new BirthdayDiscountService();
         }
         if (specialEvent.equals("Black Friday")) {
-            return new BlackFridayDiscountService ();
+            return new BlackFridayDiscountService();
         }
         if (specialEvent.equals("New Year")) {
-            return new NewYearDiscountService ();
+            return new NewYearDiscountService();
         }
         return new DefaultDiscountService();
     }
