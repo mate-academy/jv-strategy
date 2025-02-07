@@ -20,6 +20,7 @@ public class StrategyTest {
         "Black Friday", 45.0,
         "New Year", 20.0,
         "Default event", 0.0);
+
   }
 
   @Test
