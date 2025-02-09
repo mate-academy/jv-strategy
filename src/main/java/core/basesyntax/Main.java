@@ -9,8 +9,10 @@ public class Main {
         String[] events = {"Birthday", "Black Friday", "New Year", "Unknown Event"};
 
         for (String event : events) {
-            DiscountService discountService = discountStrategy.getDiscountServiceBySpecialEvent(event);
-            System.out.println("Event: " + event + " -> Discount: " + discountService.getDiscount() + "%");
+            DiscountService discountService =
+                    discountStrategy.getDiscountServiceBySpecialEvent(event);
+            System.out.println("Event: " + event + " -> Discount: "
+                    + discountService.getDiscount() + "%");
         }
     }
 }
