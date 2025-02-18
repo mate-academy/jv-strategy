@@ -10,4 +10,5 @@ public class HelloWorld {
         System.out.println("Discount: "
                 + discountService.getDiscount() + "%");
     }
+
 }
