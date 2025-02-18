@@ -8,4 +8,5 @@ public class HelloWorld {
         DiscountService discountService = discountStrategy.getDiscountServiceBySpecialEvent("New Year");
         System.out.println("Discount: " + discountService.getDiscount() + "%");
     }
+
 }
