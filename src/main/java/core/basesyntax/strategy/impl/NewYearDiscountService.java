@@ -8,4 +8,5 @@ public class NewYearDiscountService implements DiscountService {
     public double getDiscount() {
         return 20;
     }
+
 }
