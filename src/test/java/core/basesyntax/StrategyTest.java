@@ -48,7 +48,7 @@ public class StrategyTest {
   @Test
   public void interfaceDiscountService_HasThreeImplementations() {
     try {
-      Class.forName("core.basesyntax.strategy.BirthdayDiscountService");
+      Class.forName("core.basesyntax.strategy.impl.BirthdayDiscountService");
       Class.forName("core.basesyntax.strategy.impl.BlackFridayDiscountService");
       Class.forName("core.basesyntax.strategy.impl.NewYearDiscountService");
       Class.forName("core.basesyntax.strategy.impl.DefaultDiscountService");
