@@ -3,13 +3,12 @@ package core.basesyntax;
 public class DiscountStrategy {
     public DiscountService getDiscountServiceBySpecialEvent(String specialEvent) {
         switch (specialEvent) {
-            case "blackFriday":
-                return new BlackFridayDiscountService();
-            case "NewYear":
-                return new NewYearDiscountService();
-            case "BirthDay":
+            case "Birthday":
                 return new BirthdayDiscountService();
-            case "default":
+            case "Black Friday":
+                return new BlackFridayDiscountService();
+            case "New Year":
+                return new NewYearDiscountService();
             default:
                 return new DefaultDiscountService();
         }
