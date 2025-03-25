@@ -31,7 +31,8 @@ public int add(int a, int b) {
 ```
 
 #### Don't use commented code.
-It's important to develop good practices from the very beginning and fix bad ones. Pushing commented code belongs to the second group.
+It's important to develop good practices from the very beginning and fix bad ones. Pushing commented 
+code belongs to the second group.
 So whenever you create a PR - double check for absence of commented code.
 The main problem is that commented code adds confusion with no real benefit, because while using repository
 with commented code in it you will waste time analyzing its purpose and the reason why it was added. 
