@@ -26,12 +26,13 @@ public class StrategyTest {
       DiscountStrategy discountStrategy = new DiscountStrategy();
       double expectedDiscount = specialEventsDiscounts.get(specialEvent);
       double actualDiscount = discountStrategy.getDiscountServiceBySpecialEvent(specialEvent)
-          .getDiscount();
+              .getDiscount();
       Assert.assertEquals("Expected discount of " + specialEvent + " " + expectedDiscount
-              + ",but your discount " + actualDiscount,
-          expectedDiscount, actualDiscount, DELTA);
+                      + ",but your discount " + actualDiscount,
+              expectedDiscount, actualDiscount, DELTA);
     }
   }
+
 
   @Test
   public void interfaceDiscountService_IsCreated() {
