@@ -1,9 +1,11 @@
 package core.basesyntax;
 
-import core.basesyntax.strategy.DiscountService;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.Map;
+
+import core.basesyntax.strategy.DiscountService;
+import core.basesyntax.strategy.core.basesyntax.DiscountStrategy;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
