@@ -5,4 +5,11 @@ package core.basesyntax;
  */
 public class HelloWorld {
 
+    public static void main(String[] args) {
+        double discount = new DiscountStrategy()
+                .getDiscountServiceBySpecialEvent("Black Friday")
+                .getDiscount();
+        System.out.println(discount);
+    }
 }
+
