@@ -1,0 +1,19 @@
+package core.basesyntax.strategy;
+
+/**
+ * Feel free to remove this class and create your own.
+ */
+public class DiscountStrategy {
+    public DiscountService getDiscountServiceBySpecialEvent(String specialEvent) {
+        switch (specialEvent) {
+            case "Birthday":
+                return new BirthdayDiscountService();
+            case "New Year":
+                return new NewYearDiscountService();
+            case "Black Friday":
+                return new BlackFridayDiscountService();
+            default:
+                return new DefaultDiscountService();
+        }
+    }
+}
