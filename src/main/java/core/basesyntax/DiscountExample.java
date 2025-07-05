@@ -6,10 +6,14 @@ public class DiscountExample {
     public static void main(String[] args) {
         DiscountStrategy discountStrategy = new DiscountStrategy();
 
-        DiscountService birthdayService = discountStrategy.getDiscountServiceBySpecialEvent("Birthday");
-        DiscountService blackFridayService = discountStrategy.getDiscountServiceBySpecialEvent("Black Friday");
-        DiscountService newYearService = discountStrategy.getDiscountServiceBySpecialEvent("New Year");
-        DiscountService defaultService = discountStrategy.getDiscountServiceBySpecialEvent("Regular Day");
+        DiscountService birthdayService = discountStrategy
+                .getDiscountServiceBySpecialEvent("Birthday");
+        DiscountService blackFridayService = discountStrategy
+                .getDiscountServiceBySpecialEvent("Black Friday");
+        DiscountService newYearService = discountStrategy
+                .getDiscountServiceBySpecialEvent("New Year");
+        DiscountService defaultService = discountStrategy
+                .getDiscountServiceBySpecialEvent("Regular Day");
 
         double birthdayDiscount = birthdayService.getDiscount();
         double blackFridayDiscount = blackFridayService.getDiscount();
