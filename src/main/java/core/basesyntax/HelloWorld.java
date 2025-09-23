@@ -7,7 +7,6 @@ public class HelloWorld {
         DiscountStrategy strategy = new DiscountStrategy();
         DiscountService service = strategy.getDiscountServiceBySpecialEvent("Birthday");
         double discount = service.getDiscount();
-        System.out.println("Discount: " + (discount * 100) + "%");
+        System.out.println("Discount: " + discount + "%");
     }
-
 }
