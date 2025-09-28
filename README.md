@@ -1,5 +1,5 @@
 # jv-strategy
-
+ 
 ---
 Imagine you have a сhain of stores. You need to implement a discount system for people at some special events of the year like New Year.
 
