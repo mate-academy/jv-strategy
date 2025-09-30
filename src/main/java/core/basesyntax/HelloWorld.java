@@ -7,12 +7,16 @@ import core.basesyntax.strategy.DiscountService;
  */
 public class HelloWorld {
 
-    double price = 200.00;
-    DiscountStrategy strategy = new DiscountStrategy();
+    public static void main(String[] args) {
+        double price = 200.00;
+        DiscountStrategy strategy = new DiscountStrategy();
 
-    DiscountService service = strategy.getDiscountServiceBySpecialEvent("black friday");
-    double discountPercent = service.getDiscount();
+        DiscountService service = strategy.getDiscountServiceBySpecialEvent("black friday");
+        double discountPercent = service.getDiscount();
 
-    double finalPrice = price * (1 - discountPercent / 100);
+        double finalPrice = price * (1 - discountPercent / 100);
+
+        System.out.println(finalPrice);
+    }
 
 }
