@@ -11,7 +11,7 @@ public class HelloWorld {
         double price = 200.00;
         DiscountStrategy strategy = new DiscountStrategy();
 
-        DiscountService service = strategy.getDiscountServiceBySpecialEvent("black friday");
+        DiscountService service = strategy.getDiscountServiceBySpecialEvent("birthday");
         double discountPercent = service.getDiscount();
 
         double finalPrice = price * (1 - discountPercent / 100);
