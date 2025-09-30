@@ -6,6 +6,8 @@ import core.basesyntax.strategy.impl.BlackFridayDiscountService;
 import core.basesyntax.strategy.impl.DefaultDiscountService;
 import core.basesyntax.strategy.impl.NewYearDiscountService;
 
+import java.util.Locale;
+
 public class DiscountStrategy {
     private static final DiscountService DEFAULT = new DefaultDiscountService();
 
@@ -14,12 +16,14 @@ public class DiscountStrategy {
             return DEFAULT;
         }
 
-        switch (specialEvent) {
-            case "Birthday":
+        String key = specialEvent.trim().toLowerCase();
+
+        switch (key) {
+            case "birthday":
                 return new BirthdayDiscountService();
-            case "Black Friday":
+            case "black friday":
                 return new BlackFridayDiscountService();
-            case "New Year":
+            case "new year":
                 return new NewYearDiscountService();
             default:
                 return DEFAULT;
