@@ -1,5 +1,7 @@
 package core.basesyntax;
 
+import core.basesyntax.strategy.DiscountService;
+
 public class DiscountStrategy implements DiscountService {
     public DiscountService getDiscountServiceBySpecialEvent(String specialEvent) {
         switch (specialEvent) {

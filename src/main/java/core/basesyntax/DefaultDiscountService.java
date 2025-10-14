@@ -1,6 +1,6 @@
 package core.basesyntax;
 
-import core.basesyntax.DiscountService;
+import core.basesyntax.strategy.DiscountService;
 
 public class DefaultDiscountService implements DiscountService {
     @Override
