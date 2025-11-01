@@ -5,5 +5,20 @@ import core.basesyntax.strategy.impl.*;
 public class DiscountStrategy {
     public DiscountService getDiscountServiceBySpecialEvent(String specialEvent) {
 
+        if (specialEvent == null) {
+            return new DefaultDiscountService();
+        }
+
+        specialEvent = specialEvent.trim();
+
+        if (specialEvent.equalsIgnoreCase("Birthday")) {
+            return new BirthdayDiscountService();
+        } else if (specialEvent.equalsIgnoreCase("Black Friday")) {
+            return new BlackFridayDiscountService();
+        } else if (specialEvent.equalsIgnoreCase("New Year")) {
+            return new NewYearDiscountService();
+        } else {
+            return new DefaultDiscountService();
+        }
     }
 }
