@@ -6,6 +6,6 @@ public class BlackFridayDiscountService implements DiscountService {
 
     @Override
     public double getDiscount() {
-        return 0;
+        return 45;
     }
 }
