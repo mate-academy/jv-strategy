@@ -15,6 +15,5 @@ public class HelloWorld {
             double discount = discountService1.getDiscount();
             System.out.println(event + "\n" + discount);
         }
-
     }
 }
