@@ -6,6 +6,8 @@ import core.basesyntax.strategy.impl.BlackFridayDiscountService;
 import core.basesyntax.strategy.impl.DefaultDiscountService;
 import core.basesyntax.strategy.impl.NewYearDiscountService;
 
+//Some changes for git
+
 public class DiscountStrategy {
     public DiscountService getDiscountServiceBySpecialEvent(String specialEvent) {
         switch (specialEvent) {
