@@ -1,28 +1,29 @@
 # jv-strategy
 
 ---
-Imagine you have a сhain of stores. You need to implement a discount system for people at some special events of the year like New Year.
+Уявіть, що у вас є мережа магазинів. Вам потрібно реалізувати систему знижок для людей на деякі особливі події року, такі як Новий рік.
 
-In this task, we'll need help with the Strategy pattern.
-First of all, you need to create a `DiscountService` interface with the method `getDiscount()` with the return type `double`. 
-It must be located in the `core.basesyntax.strategy` package.
+У цьому завданні нам допоможе патерн Стратегія.
 
-You must create its implementations (with the same names) with such discounts:
+Перш за все, вам потрібно створити інтерфейс `DiscountService` з методом `getDiscount()` з типом повернення `double`. 
+Він має розміщуватися в пакеті `core.basesyntax.strategy`.
 
-| Implementation name |Discount |
+Ви повинні створити його реалізації (з такими самими назвами) з наступними знижками:
+
+| Назва реалізації |Знижка |
 | :---: | :---: |
 | DefaultDiscountService| 0 |
 | NewYearDiscountService| 20 |
 | BirthdayDiscountService| 33 |
 | BlackFridayDiscountService| 45 |
 
-In each of these implementations in result of the execution of the method `getDiscount()` must return a discount according to the table above.
-Also, these implementations must be located in the `core.basesyntax.strategy.impl` package.
+У кожній з цих реалізацій в результаті виконання методу `getDiscount()` має повертатися знижка згідно з таблицею вище.
+Також ці реалізації мають розміщуватися в пакеті `core.basesyntax.strategy.impl`.
 
-The last step will be the creation of a class called `DiscountStrategy` located in the `core.basesyntax` package. It must have method `getDiscountServiceBySpecialEvent(String specialEvent)` with return type `DiscountService` where `specialEvent` can have such values: `"Birthday"`, `"Black Friday"`, `"New Year"`.
+Останнім кроком буде створення класу під назвою `DiscountStrategy`, розміщеного в пакеті `core.basesyntax`. Він повинен мати метод `getDiscountServiceBySpecialEvent(String specialEvent)` з типом повернення `DiscountService`, де `specialEvent` може мати такі значення: `"Birthday"`, `"Black Friday"`, `"New Year"`.
 
-Using `specialEvent`, you must write code that defines the `DiscountService` implementation.
+Використовуючи `specialEvent`, ви повинні написати код, який визначає реалізацію `DiscountService`.
 
-In case the passed `specialEvent` doesn't have a specific implementation you must return `DefaultDiscountService` by default.
+У випадку, якщо переданий `specialEvent` не має конкретної реалізації, ви повинні повернути `DefaultDiscountService` за замовчуванням.
 
-#### [Try to avoid these common mistakes, while solving task](./checklist.md)
+#### [Намагайтеся уникати цих поширених помилок під час виконання завдання](./checklist.md)
