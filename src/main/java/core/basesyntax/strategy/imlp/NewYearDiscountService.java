@@ -1,4 +1,10 @@
 package core.basesyntax.strategy.imlp;
 
-public class NewYearDiscountService {
+import core.basesyntax.strategy.DiscountService;
+
+public class NewYearDiscountService implements DiscountService {
+    @Override
+    public double getDiscount() {
+        return 20;
+    }
 }
