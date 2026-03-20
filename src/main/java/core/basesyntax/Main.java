@@ -6,7 +6,8 @@ public class Main {
     public static void main(String[] args) {
         String specialEvent = "Birthday";
         DiscountStrategy discountStrategy = new DiscountStrategy();
-        DiscountService discountService = discountStrategy.getDiscountServiceBySpecialEvent(specialEvent);
+        DiscountService discountService = discountStrategy
+                .getDiscountServiceBySpecialEvent(specialEvent);
         System.out.println(discountService.getDiscount());
     }
 }
