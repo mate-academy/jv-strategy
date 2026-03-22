@@ -1,5 +1,5 @@
 package core.basesyntax.strategy;
 
-public abstract interface DiscountService {
+public interface DiscountService {
     double getDiscount(int startPrice);
 }
