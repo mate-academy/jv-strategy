@@ -1,8 +1,9 @@
-package basesyntax.strategy.impl.BlackFridayDiscountService;
-package basesyntax.strategy.impl.DefaultDiscountService;
-package basesyntax.strategy.impl.NewYearDiscountService;
-package basesyntax.strategy.impl.BirthdayDiscountService;
+package core.basesyntax;
 
+import basesyntax.strategy.impl.BlackFridayDiscountService;
+import basesyntax.strategy.impl.DefaultDiscountService;
+import basesyntax.strategy.impl.NewYearDiscountService;
+import basesyntax.strategy.impl.BirthdayDiscountService;
 
 public class DiscountStrategy  {
     public DiscountService getDiscountServiceBySpecialEvent(String specialEvent) {
