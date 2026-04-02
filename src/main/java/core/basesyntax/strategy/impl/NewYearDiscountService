@@ -1,8 +1,9 @@
-package basesyntax.strategy.impl;
+package core.basesyntax.strategy.impl;
 
-import basesyntax.strategy.DiscountService;
+import core.basesyntax.strategy.DiscountService;
+
 public class NewYearDiscountService implements DiscountService {
     @Override
     public double getDiscount(double discount) {
-        return (double) discount * 0.8;
+        return (double) 20;
 }
