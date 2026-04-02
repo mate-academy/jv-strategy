@@ -1,0 +1,21 @@
+package basesyntax.strategy.impl.BlackFridayDiscountService;
+package basesyntax.strategy.impl.DefaultDiscountService;
+package basesyntax.strategy.impl.NewYearDiscountService;
+package basesyntax.strategy.impl.BirthdayDiscountService;
+
+
+public class DiscountStrategy  {
+    public DiscountService getDiscountServiceBySpecialEvent(String specialEvent) {
+        switch (specialEvent) {
+        case "New Year":
+            return new NewYearDiscountService();
+        case "Black Friday":
+            return new BlackFridayDiscountService();
+        case "Birthday":
+            return new Birthday();
+        default:
+            return new DefaultDiscountService();
+        }
+    }
+}
+
