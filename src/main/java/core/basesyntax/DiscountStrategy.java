@@ -20,8 +20,6 @@ public class DiscountStrategy {
                 return new NewYearDiscountService();
             default:
                 return new DefaultDiscountService();
-
         }
-
     }
 }
