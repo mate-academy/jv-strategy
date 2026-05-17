@@ -1,4 +1,4 @@
-package core.basesyntax.strategy.impl;
+package core.basesyntax.strategy;
 
 public interface DiscountService {
     double getDiscount();

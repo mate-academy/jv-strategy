@@ -1,6 +1,6 @@
 package core.basesyntax;
 
-import core.basesyntax.strategy.impl.DiscountService;
+import core.basesyntax.strategy.DiscountService;
 import core.basesyntax.strategy.impl.BirthdayDiscountService;
 import core.basesyntax.strategy.impl.BlackFridayDiscountService;
 import core.basesyntax.strategy.impl.DefaultDiscountService;
@@ -12,7 +12,7 @@ public class DiscountStrategy {
             return new DefaultDiscountService();
         }
         switch (specialEvent) {
-            case "Happy Birthday":
+            case "Birthday":
                 return new BirthdayDiscountService();
             case "Black Friday":
                 return new BlackFridayDiscountService();
