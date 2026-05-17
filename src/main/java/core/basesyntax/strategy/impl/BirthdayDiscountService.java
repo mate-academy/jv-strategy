@@ -5,6 +5,6 @@ import core.basesyntax.strategy.DiscountService;
 public class BirthdayDiscountService implements DiscountService {
 
     public double getDiscount() {
-        return 33.0;
+        return 34.0;
     }
 }
