@@ -12,7 +12,7 @@ public class DiscountStrategy {
             return new DefaultDiscountService();
         }
         switch (specialEvent) {
-            case "Birthday":
+            case "Happy Birthday":
                 return new BirthdayDiscountService();
             case "Black Friday":
                 return new BlackFridayDiscountService();
