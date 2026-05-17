@@ -19,7 +19,7 @@ public class DiscountStrategy {
             case "New Year":
                 return new NewYearDiscountService();
             default:
-                 return new DefaultDiscountService();
+                return new DefaultDiscountService();
 
         }
 
