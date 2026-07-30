@@ -14,9 +14,9 @@ public class DiscountStrategy {
 
     public DiscountStrategy() {
         this(Map.of(
-            "Birthday", new BirthdayDiscountService(),
-            "Black Friday", new BlackFridayDiscountService(),
-            "New Year", new NewYearDiscountService()
+                "Birthday", new BirthdayDiscountService(),
+                "Black Friday", new BlackFridayDiscountService(),
+                "New Year", new NewYearDiscountService()
         ), new DefaultDiscountService());
     }
 
