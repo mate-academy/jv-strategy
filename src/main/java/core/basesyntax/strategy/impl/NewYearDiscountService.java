@@ -6,6 +6,6 @@ public class NewYearDiscountService implements DiscountService {
 
     @Override
     public double getDiscount() {
-        return 0.2;
+        return 20.0;
     }
 }
