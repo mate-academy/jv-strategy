@@ -1,12 +1,16 @@
 package core.basesyntax;
 
 import core.basesyntax.strategy.DiscountService;
-import java.lang.reflect.Method;
-import java.lang.reflect.Modifier;
-import java.util.Map;
+import core.basesyntax.strategy.DiscountStrategy;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
+import java.util.Map;
+
+import static org.junit.Assert.assertEquals;
 
 public class StrategyTest {
   private static final double DELTA = 0.0;
@@ -25,9 +29,9 @@ public class StrategyTest {
     for (String specialEvent : specialEventsDiscounts.keySet()) {
       DiscountStrategy discountStrategy = new DiscountStrategy();
       double expectedDiscount = specialEventsDiscounts.get(specialEvent);
-      double actualDiscount = discountStrategy.getDiscountServiceBySpecialEvent(specialEvent)
-          .getDiscount();
-      Assert.assertEquals("Expected discount of " + specialEvent + " " + expectedDiscount
+        double actualDiscount = discountStrategy.getDiscountServiceBySpecialEvent(specialEvent)
+                .getDiscount();
+        assertEquals("Expected discount of " + specialEvent + " " + expectedDiscount
               + ",but your discount " + actualDiscount,
           expectedDiscount, actualDiscount, DELTA);
     }
@@ -90,7 +94,7 @@ public class StrategyTest {
     int pathLength = discountServiceInterface.getName().split("\\.").length;
     String interfaceName = discountServiceInterface.getName().split("\\.")[pathLength - 1];
     Method[] methods = discountServiceInterface.getDeclaredMethods();
-    Assert.assertEquals(interfaceName + " must have one method\n", 1, methods.length);
+    assertEquals(interfaceName + " must have one method\n", 1, methods.length);
     Method getDiscountMethod = methods[0];
     boolean isGetDiscountOk = getDiscountMethod.getReturnType().equals(Double.class)
         && getDiscountMethod.getParameters().length == 1
