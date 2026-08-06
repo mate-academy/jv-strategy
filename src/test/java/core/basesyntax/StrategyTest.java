@@ -1,12 +1,13 @@
 package core.basesyntax;
 
-import core.basesyntax.strategy.DiscountService;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.Map;
+
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import strategy.DiscountService;
 
 public class StrategyTest {
   private static final double DELTA = 0.0;
@@ -36,7 +37,7 @@ public class StrategyTest {
   @Test
   public void interfaceDiscountService_IsCreated() {
     try {
-      Class<?> discountServiceInterface = Class.forName("core.basesyntax.strategy.DiscountService");
+      Class<?> discountServiceInterface = Class.forName("core.basesyntax.strategy.impl.DiscountService");
       Assert.assertTrue("DiscountService must be an interface\n", discountServiceInterface.isInterface());
       checkHasMethodGetDiscount(discountServiceInterface);
     } catch (ClassNotFoundException e) {
