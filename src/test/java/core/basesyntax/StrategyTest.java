@@ -1,9 +1,10 @@
 package core.basesyntax;
 
-import core.basesyntax.strategy.DiscountService;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.Map;
+
+import core.basesyntax.strategy.DiscountService;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -25,8 +26,7 @@ public class StrategyTest {
     for (String specialEvent : specialEventsDiscounts.keySet()) {
       DiscountStrategy discountStrategy = new DiscountStrategy();
       double expectedDiscount = specialEventsDiscounts.get(specialEvent);
-      double actualDiscount = discountStrategy.getDiscountServiceBySpecialEvent(specialEvent)
-          .getDiscount();
+      double actualDiscount = discountStrategy.getDiscountServiceBySpecialEvent(specialEvent).getDiscount();
       Assert.assertEquals("Expected discount of " + specialEvent + " " + expectedDiscount
               + ",but your discount " + actualDiscount,
           expectedDiscount, actualDiscount, DELTA);
