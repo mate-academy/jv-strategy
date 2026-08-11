@@ -1,6 +1,5 @@
 package core.basesyntax;
 
-import core.basesyntax.strategy.DiscountService;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.Map;
@@ -23,7 +22,7 @@ public class StrategyTest {
   @Test
   public void getDiscountBySpecialEvent_IsOk() {
     for (String specialEvent : specialEventsDiscounts.keySet()) {
-      DiscountStrategy discountStrategy = new DiscountStrategy();
+      DiscountService discountStrategy = new DiscountService();
       double expectedDiscount = specialEventsDiscounts.get(specialEvent);
       double actualDiscount = discountStrategy.getDiscountServiceBySpecialEvent(specialEvent)
           .getDiscount();
@@ -61,7 +60,7 @@ public class StrategyTest {
   @Test
   public void classDiscountStrategy_IsCreated() {
     try {
-      Class<?> discountStrategyClass = Class.forName("core.basesyntax.DiscountStrategy");
+      Class<?> discountStrategyClass = Class.forName("core.basesyntax.DiscountService");
       checkHasMethodGetDiscountServiceBySpecialEvent(discountStrategyClass);
     } catch (ClassNotFoundException e) {
       Assert.assertTrue("Class DiscountStrategy isn't created " +
@@ -74,7 +73,7 @@ public class StrategyTest {
     String interfaceName = discountStrategyClass.getName().split("\\.")[pathLength - 1];
     Method[] methods = discountStrategyClass.getDeclaredMethods();
     for (Method method : methods) {
-      boolean isGetDiscountServiceBySpecialEventOk = method.getReturnType().equals(DiscountService.class)
+      boolean isGetDiscountServiceBySpecialEventOk = method.getReturnType().equals(core.basesyntax.strategy.DiscountService.class)
           && Modifier.isPublic(method.getModifiers())
           && method.getParameters().length == 1
           && method.getParameters()[0].getType().equals(String.class);
