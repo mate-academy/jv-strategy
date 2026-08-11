@@ -1,5 +1,6 @@
 package core.basesyntax;
 
+import basesyntax.DiscountStrategy;
 import core.basesyntax.strategy.DiscountService;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
