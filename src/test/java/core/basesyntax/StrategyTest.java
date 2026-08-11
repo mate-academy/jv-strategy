@@ -1,5 +1,6 @@
 package core.basesyntax;
 
+import core.basesyntax.impl.DiscountStrategy;
 import core.basesyntax.strategy.DiscountService;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
@@ -36,11 +37,11 @@ public class StrategyTest {
   @Test
   public void interfaceDiscountService_IsCreated() {
     try {
-      Class<?> discountServiceInterface = Class.forName("core.basesyntax.strategy.DiscountService");
-      Assert.assertTrue("DiscountService must be an interface\n", discountServiceInterface.isInterface());
+      Class<?> discountServiceInterface = Class.forName("core.basesyntax.strategy.core.basesyntax.strategy.DiscountService");
+      Assert.assertTrue("core.basesyntax.strategy.DiscountService must be an interface\n", discountServiceInterface.isInterface());
       checkHasMethodGetDiscount(discountServiceInterface);
     } catch (ClassNotFoundException e) {
-      Assert.assertTrue("Interface DiscountService isn't created " +
+      Assert.assertTrue("Interface core.basesyntax.strategy.DiscountService isn't created " +
           "or created in wrong directory\n", true);
     }
   }
@@ -48,10 +49,10 @@ public class StrategyTest {
   @Test
   public void interfaceDiscountService_HasThreeImplementations() {
     try {
-      Class.forName("core.basesyntax.strategy.impl.BirthdayDiscountService");
+      Class.forName("core.basesyntax.strategy.impl.core.basesyntax.impl.BirthdayDiscountService");
       Class.forName("core.basesyntax.strategy.impl.BlackFridayDiscountService");
-      Class.forName("core.basesyntax.strategy.impl.NewYearDiscountService");
-      Class.forName("core.basesyntax.strategy.impl.DefaultDiscountService");
+      Class.forName("core.basesyntax.strategy.impl.core.basesyntax.impl.NewYearDiscountService");
+      Class.forName("core.basesyntax.strategy.impl.core.basesyntax.impl.DefaultDiscountService");
     } catch (ClassNotFoundException e) {
       Assert.assertTrue("There is no such package as core.basesyntax.strategy.impl " +
           "or you didn't create all needed implementations\n", true);
@@ -61,10 +62,10 @@ public class StrategyTest {
   @Test
   public void classDiscountStrategy_IsCreated() {
     try {
-      Class<?> discountStrategyClass = Class.forName("core.basesyntax.DiscountStrategy");
+      Class<?> discountStrategyClass = Class.forName("core.basesyntax.core.basesyntax.impl.DiscountStrategy");
       checkHasMethodGetDiscountServiceBySpecialEvent(discountStrategyClass);
     } catch (ClassNotFoundException e) {
-      Assert.assertTrue("Class DiscountStrategy isn't created " +
+      Assert.assertTrue("Class core.basesyntax.impl.DiscountStrategy isn't created " +
           "or created in wrong directory\n", true);
     }
   }
