@@ -51,7 +51,7 @@ public class StrategyTest {
       Class.forName("core.basesyntax.strategy.impl.BirthdayDiscountService");
       Class.forName("core.basesyntax.strategy.impl.BlackFridayDiscountService");
       Class.forName("core.basesyntax.strategy.impl.NewYearDiscountService");
-      Class.forName("core.basesyntax.strategy.impl.DefaultDiscountService");
+      Class.forName("core.basesyntax.strategy.impl.NewYearDiscountService$DefaultDiscountService");
     } catch (ClassNotFoundException e) {
       Assert.assertTrue("There is no such package as core.basesyntax.strategy.impl " +
           "or you didn't create all needed implementations\n", true);
