@@ -23,7 +23,7 @@ public class StrategyTest {
   @Test
   public void getDiscountBySpecialEvent_IsOk() {
     for (String specialEvent : specialEventsDiscounts.keySet()) {
-      DiscountStrategy discountStrategy = new DiscountStrategy();
+      HelloWorld discountStrategy = new HelloWorld();
       double expectedDiscount = specialEventsDiscounts.get(specialEvent);
       double actualDiscount = discountStrategy.getDiscountServiceBySpecialEvent(specialEvent)
           .getDiscount();
@@ -61,7 +61,7 @@ public class StrategyTest {
   @Test
   public void classDiscountStrategy_IsCreated() {
     try {
-      Class<?> discountStrategyClass = Class.forName("core.basesyntax.DiscountStrategy");
+      Class<?> discountStrategyClass = Class.forName("core.basesyntax.HelloWorld");
       checkHasMethodGetDiscountServiceBySpecialEvent(discountStrategyClass);
     } catch (ClassNotFoundException e) {
       Assert.assertTrue("Class DiscountStrategy isn't created " +
