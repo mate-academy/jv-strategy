@@ -1,12 +1,13 @@
 package core.basesyntax;
 
-import core.basesyntax.strategy.DiscountService;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.Map;
+
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import core.basesyntax.strategy.DiscountService;
 
 public class StrategyTest {
   private static final double DELTA = 0.0;
@@ -48,10 +49,10 @@ public class StrategyTest {
   @Test
   public void interfaceDiscountService_HasThreeImplementations() {
     try {
-      Class.forName("core.basesyntax.strategy.impl.BirthdayDiscountService");
-      Class.forName("core.basesyntax.strategy.impl.BlackFridayDiscountService");
-      Class.forName("core.basesyntax.strategy.impl.NewYearDiscountService");
-      Class.forName("core.basesyntax.strategy.impl.DefaultDiscountService");
+      Class.forName("core.basesyntax.core.basesyntax.impl.strategy.BirthdayDiscountService");
+      Class.forName("core.basesyntax.core.basesyntax.impl.strategy.BlackFridayDiscountService");
+      Class.forName("core.basesyntax.core.basesyntax.impl.strategy.NewYearDiscountService");
+      Class.forName("core.basesyntax.core.basesyntax.impl.strategy.DefaultDiscountService");
     } catch (ClassNotFoundException e) {
       Assert.assertTrue("There is no such package as core.basesyntax.strategy.impl " +
           "or you didn't create all needed implementations\n", true);
