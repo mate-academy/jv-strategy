@@ -4,6 +4,8 @@ import core.basesyntax.strategy.DiscountService;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.Map;
+
+import core.basesyntax.strategy.DiscountStrategy;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -18,6 +20,7 @@ public class StrategyTest {
         "Black Friday", 45.0,
         "New Year", 20.0,
         "Default event", 0.0);
+
   }
 
   @Test
