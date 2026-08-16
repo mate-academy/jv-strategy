@@ -51,7 +51,7 @@ public class StrategyTest {
       Class.forName("core.basesyntax.strategy.impl.BirthdayDiscountService");
       Class.forName("core.basesyntax.strategy.impl.BlackFridayDiscountService");
       Class.forName("core.basesyntax.strategy.impl.NewYearDiscountService");
-      Class.forName("core.basesyntax.strategy.impl.DefaultDiscountService");
+      Class.forName("core.basesyntax.strategy.impl.core.basesyntax.strategy.impl.DefaultDiscountService");
     } catch (ClassNotFoundException e) {
       Assert.assertTrue("There is no such package as core.basesyntax.strategy.impl " +
           "or you didn't create all needed implementations\n", true);
@@ -61,10 +61,10 @@ public class StrategyTest {
   @Test
   public void classDiscountStrategy_IsCreated() {
     try {
-      Class<?> discountStrategyClass = Class.forName("core.basesyntax.DiscountStrategy");
+      Class<?> discountStrategyClass = Class.forName("core.basesyntax.core.basesyntax.DiscountStrategy");
       checkHasMethodGetDiscountServiceBySpecialEvent(discountStrategyClass);
     } catch (ClassNotFoundException e) {
-      Assert.assertTrue("Class DiscountStrategy isn't created " +
+      Assert.assertTrue("Class core.basesyntax.DiscountStrategy isn't created " +
           "or created in wrong directory\n", true);
     }
   }
