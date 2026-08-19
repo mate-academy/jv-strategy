@@ -1,8 +1,14 @@
 package core.basesyntax;
 
-/**
- * Feel free to remove this class and create your own.
- */
-public class HelloWorld {
+import core.basesyntax.strategy.DiscountService;
 
+public class HelloWorld {
+    public static void main(String[] args) {
+
+        DiscountStrategy discount = new DiscountStrategy();
+        DiscountService discountService = discount.getDiscountServiceBySpecialEvent("Black Friday");
+        double salary = discountService.getDiscount();
+        System.out.println(salary);
+
+    }
 }
