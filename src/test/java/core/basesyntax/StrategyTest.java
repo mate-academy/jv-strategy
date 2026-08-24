@@ -14,22 +14,25 @@ public class StrategyTest {
 
   @BeforeClass
   public static void setUp() {
-    specialEventsDiscounts = Map.of("Birthday", 33.0,
+    specialEventsDiscounts = Map.of(
+        "Birthday", 33.0,
         "Black Friday", 45.0,
         "New Year", 20.0,
-        "Default event", 0.0);
+        "Default event", 0.0
+    );
   }
 
   @Test
   public void getDiscountBySpecialEvent_IsOk() {
+    double price = 100.0; // Фіксована ціна для перевірки
     for (String specialEvent : specialEventsDiscounts.keySet()) {
       DiscountStrategy discountStrategy = new DiscountStrategy();
       double expectedDiscount = specialEventsDiscounts.get(specialEvent);
       double actualDiscount = discountStrategy.getDiscountServiceBySpecialEvent(specialEvent)
-          .getDiscount();
+          .getDiscount(price);
       Assert.assertEquals("Expected discount of " + specialEvent + " " + expectedDiscount
-              + ",but your discount " + actualDiscount,
-          expectedDiscount, actualDiscount, DELTA);
+              + ", but your discount " + actualDiscount,
+          price - (price * expectedDiscount / 100), actualDiscount, DELTA);
     }
   }
 
@@ -40,8 +43,8 @@ public class StrategyTest {
       Assert.assertTrue("DiscountService must be an interface\n", discountServiceInterface.isInterface());
       checkHasMethodGetDiscount(discountServiceInterface);
     } catch (ClassNotFoundException e) {
-      Assert.assertTrue("Interface DiscountService isn't created " +
-          "or created in wrong directory\n", true);
+      Assert.fail("Interface DiscountService isn't created " +
+          "or created in wrong directory\n");
     }
   }
 
@@ -53,8 +56,8 @@ public class StrategyTest {
       Class.forName("core.basesyntax.strategy.impl.NewYearDiscountService");
       Class.forName("core.basesyntax.strategy.impl.DefaultDiscountService");
     } catch (ClassNotFoundException e) {
-      Assert.assertTrue("There is no such package as core.basesyntax.strategy.impl " +
-          "or you didn't create all needed implementations\n", true);
+      Assert.fail("There is no such package as core.basesyntax.strategy.impl " +
+          "or you didn't create all needed implementations\n");
     }
   }
 
@@ -64,14 +67,13 @@ public class StrategyTest {
       Class<?> discountStrategyClass = Class.forName("core.basesyntax.DiscountStrategy");
       checkHasMethodGetDiscountServiceBySpecialEvent(discountStrategyClass);
     } catch (ClassNotFoundException e) {
-      Assert.assertTrue("Class DiscountStrategy isn't created " +
-          "or created in wrong directory\n", true);
+      Assert.fail("Class DiscountStrategy isn't created " +
+          "or created in wrong directory\n");
     }
   }
 
   private void checkHasMethodGetDiscountServiceBySpecialEvent(Class<?> discountStrategyClass) {
-    int pathLength = discountStrategyClass.getName().split("\\.").length;
-    String interfaceName = discountStrategyClass.getName().split("\\.")[pathLength - 1];
+    String interfaceName = discountStrategyClass.getSimpleName();
     Method[] methods = discountStrategyClass.getDeclaredMethods();
     for (Method method : methods) {
       boolean isGetDiscountServiceBySpecialEventOk = method.getReturnType().equals(DiscountService.class)
@@ -82,20 +84,19 @@ public class StrategyTest {
         return;
       }
     }
-    Assert.assertFalse(interfaceName + " must have public method getDiscountServiceBySpecialEvent() " +
-        "that returns double and accepts String parameter\n", false);
+    Assert.fail(interfaceName + " must have public method getDiscountServiceBySpecialEvent() " +
+        "that returns DiscountService and accepts String parameter\n");
   }
 
   private void checkHasMethodGetDiscount(Class<?> discountServiceInterface) {
-    int pathLength = discountServiceInterface.getName().split("\\.").length;
-    String interfaceName = discountServiceInterface.getName().split("\\.")[pathLength - 1];
+    String interfaceName = discountServiceInterface.getSimpleName();
     Method[] methods = discountServiceInterface.getDeclaredMethods();
     Assert.assertEquals(interfaceName + " must have one method\n", 1, methods.length);
     Method getDiscountMethod = methods[0];
-    boolean isGetDiscountOk = getDiscountMethod.getReturnType().equals(Double.class)
+    boolean isGetDiscountOk = getDiscountMethod.getReturnType().equals(double.class)
         && getDiscountMethod.getParameters().length == 1
-        && getDiscountMethod.getParameters()[0].getType().equals(Double.class);
-    Assert.assertFalse(interfaceName + " must have method getDiscount() " +
+        && getDiscountMethod.getParameters()[0].getType().equals(double.class);
+    Assert.assertTrue(interfaceName + " must have method getDiscount() " +
         "that returns double and accepts double parameter\n", isGetDiscountOk);
   }
 }
