@@ -23,6 +23,6 @@ The last step will be the creation of a class called `DiscountStrategy` located 
 
 Using `specialEvent`, you must write code that defines the `DiscountService` implementation.
 
-In case the passed `specialEvent` doesn't have a specific implementation you must return `DefaultDiscountService` by default.
+In case the passed `specialEvent` doesn't have a specific implementation you must return `getDiscount` by default.
 
 #### [Try to avoid these common mistakes, while solving task](./checklist.md)
